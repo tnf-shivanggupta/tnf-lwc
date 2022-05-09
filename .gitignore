@@ -1,0 +1,7 @@
+/node_modules/
+/public/build/
+__lwr_cache__
+__generated_site__
+build
+dist
+.DS_Store

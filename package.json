@@ -1,0 +1,33 @@
+{
+  "name": "lwr-project",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf __lwr_cache__",
+    "dev": "lwr serve",
+    "start": "lwr serve --mode prod",
+    "start:compat": "lwr serve --mode compat",
+    "start:prod-compat": "lwr serve --mode prod-compat"
+  },
+  "dependencies": {
+    "lwr": "0.6.2"
+  },
+  "engines": {
+    "node": ">=14.15.4 <17"
+  },
+  "devDependencies": {
+    "@lwc/module-resolver": "^2.13.2",
+    "@lwc/rollup-plugin": "^2.13.3",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "lwc": "^2.13.3",
+    "lwc-webpack-plugin": "^3.0.0",
+    "rollup": "^2.72.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

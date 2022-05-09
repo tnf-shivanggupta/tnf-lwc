@@ -1,0 +1,14 @@
+{
+    "lwc": { 
+			"modules": [{ "dir": "$rootDir/src/modules" }] ,
+			"expose": ["example/app"],
+			"serverMode": "prod"
+		},
+    "routes": [
+        {
+            "id": "example",
+            "path": "/",
+            "rootComponent": "example/app"
+        }
+    ]
+}
