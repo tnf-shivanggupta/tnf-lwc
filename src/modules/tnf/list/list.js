@@ -6,4 +6,7 @@ export default class List extends LightningElement {
 		this.message = event.target.value;
 	}
 }
-customElements.define('tnf-list', List.CustomElementConstructor);
+
+// Don't use the same name as tnf-list. It will break the functionality during composition
+customElements.define('tnf-list-ce', List.CustomElementConstructor);
+

@@ -1,5 +1,4 @@
-import { createElement } from 'lwc';
-import App from 'example/app';
+import List from 'tnf/list';
+import Button from 'tnf/button';
 
-customElements.define('tnf-helloworld', App.CustomElementConstructor);
-createElement('example-app', { is: App });
+export {List, Button}
