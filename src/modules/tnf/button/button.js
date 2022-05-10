@@ -1,4 +1,5 @@
 import { api, LightningElement } from 'lwc';
+import { registerCustomComponent } from '../../utils/util';
 
 export default class Button extends LightningElement {
 	@api 
@@ -8,4 +9,4 @@ export default class Button extends LightningElement {
 	}
 }
 // Don't use the same name as tnf-button. It will break the functionality during composition
-customElements.define('tnf-button-ce', Button.CustomElementConstructor);
+registerCustomComponent('tnf-button-ce', Button.CustomElementConstructor);

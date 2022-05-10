@@ -1,4 +1,5 @@
 import { api, LightningElement } from 'lwc';
+import { registerCustomComponent } from '../../utils/util';
 
 export default class List extends LightningElement {
 	message = "Hello World";
@@ -8,5 +9,6 @@ export default class List extends LightningElement {
 }
 
 // Don't use the same name as tnf-list. It will break the functionality during composition
-customElements.define('tnf-list-ce', List.CustomElementConstructor);
+
+registerCustomComponent('tnf-list-ce', List.CustomElementConstructor);
 
