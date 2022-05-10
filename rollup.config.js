@@ -13,8 +13,8 @@ function generateComponentConfig() {
 			external : [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)],
 			input: [`src/modules/tnf/${folderName}/${folderName}.js`],
 			output: [
-				{ file: `tnf-lwc-build/${folderName}/${folderName}.mjs`, 'format': 'es' },
-				{ file: `tnf-lwc-build/${folderName}/${folderName}.js`, 'format': 'umd', name: folderName }
+				{ file: `tnf-lwc-build/${folderName}/${folderName}.mjs`, 'format': 'iife' },
+				// { file: `tnf-lwc-build/${folderName}/${folderName}.js`, 'format': 'umd', name: folderName }
 			],
 			plugins: [
 				replace({
@@ -22,7 +22,7 @@ function generateComponentConfig() {
 				}),
 				lwc(),
 				resolve(),
-				terser()
+				// terser()
 			],
 		};
 	});
@@ -30,20 +30,20 @@ function generateComponentConfig() {
 
 export default [
     ...generateComponentConfig(),
-		{
-			external : [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)],
-			input: "./src/main.js",
-			output: [
-				{ file: `tnf-lwc-build/tnf-lib.mjs`, 'format': 'es' },
-				{ file: `tnf-lwc-build/tnf-lib.js`, 'format': 'umd', name: 'tnf-lib' }
-			],
-			plugins: [
-				replace({
-					'process.env.NODE_ENV': JSON.stringify('development'),
-				}),
-				lwc(),
-				resolve(),
-				terser()
-			],
-		}
+		// {
+		// 	external : [...Object.keys(pkg.dependencies), ...Object.keys(pkg.devDependencies)],
+		// 	input: "./src/main.js",
+		// 	output: [
+		// 		{ file: `tnf-lwc-build/tnf-lib.mjs`, 'format': 'es' },
+		// 		{ file: `tnf-lwc-build/tnf-lib.js`, 'format': 'umd', name: 'tnf-lib' }
+		// 	],
+		// 	plugins: [
+		// 		replace({
+		// 			'process.env.NODE_ENV': JSON.stringify('development'),
+		// 		}),
+		// 		lwc(),
+		// 		resolve(),
+		// 		terser()
+		// 	],
+		// }
 ];

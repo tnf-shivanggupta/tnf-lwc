@@ -1,7 +1,17 @@
 <template>
-    <main>
-        <img src="./recipes-logo.png" alt="logo" />
-        <h1>{message}</h1>
-				<input value={message} oninput={handleInput}>
-    </main>
+	<lightning-dual-listbox
+		id="selectOptions"
+		name="Select Options"
+		label="Select Options"
+		source-label="Available Options"
+		selected-label="Selected Options"
+		options={listOptions}
+		value={defaultOptions}
+		required-options={requiredOptions}
+		onchange={handleChange}
+	>
+	</lightning-dual-listbox>
+	<div class="slds-box" >
+		<p>Selected values are: {selected}</p>
+	</div>
 </template>
